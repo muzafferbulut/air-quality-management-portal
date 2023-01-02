@@ -1,0 +1,134 @@
+﻿html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#flex-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-top {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  position: relative;
+}
+
+#flex-bottom {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  width: 60%;
+  background-color: bisque;
+  border: 2px solid red;
+}
+
+#dash {
+  height: 100%;
+  width: 40%;
+}
+
+#traffic {
+  height: 100%;
+  width: 33.33%;
+  background-color: red;
+}
+
+#meteorology {
+  height: 100%;
+  width: 33.33%;
+  background-color: rgb(145, 136, 136);
+}
+
+#weather {
+  height: 100%;
+  width: 33.33%;
+  background-color: rgb(214, 25, 173);
+}
+
+#stationList {
+  margin-left: 50px;
+  width: 50%;
+  height: 30px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+hr{
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+}
+
+h3 {
+  margin-left: 30px;
+}
+
+#start-date{
+  margin-left: 10px;
+
+}
+
+#end-date{
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+label{
+  margin-left: 30px;
+}
+
+.calcAqi {
+  appearance: none;
+  background-color: #73a86c;
+  border: 2px solid #a0c49c;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: auto;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.calcAqi:disabled {
+  pointer-events: none;
+}
+
+.calcAqi:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.calcAqi:active {
+  box-shadow: none;
+  transform: translateY(0);
+}

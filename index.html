@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Air Quality Management Portal</title>
+    <meta name="author" content="Muzafer Bulut" />
+    <script src="js/getMap.js" defer></script>
+    <script src="js/getAqi.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div id="flex-container">
+      <div id="flex-top">
+        <div id="map"></div>
+        <div id="dash">
+          <h1>AIR QUALITY MANAGEMENT PORTAL</h1>
+          <hr />
+          <h3>Station List</h3>
+          <select name="select-element" id="stationList"></select>
+          <h3>Datetime Input</h3>
+          <label for="start-date">Start Date</label>
+          <input
+            type="datetime-local"
+            id="start-date"
+            name="start-date"
+            max="2020-06-19 00:00:00"
+          />
+          <label for="end-date">End Date</label>
+          <input
+            type="datetime-local"
+            id="end-date"
+            name="end-date"
+            max="2020-06-19 00:00:00"
+          />
+          <button class="calcAqi" role="button">Calculate AQI</button>
+        </div>
+      </div>
+      <div id="flex-bottom">
+        <div id="traffic"></div>
+        <div id="meteorology"></div>
+        <div id="weather"></div>
+      </div>
+    </div>
+  </body>
+</html>
