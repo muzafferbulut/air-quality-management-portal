@@ -14,14 +14,16 @@ document.getElementById("submit-button").addEventListener("click", () => {
   // start date parse
   let sDate = startDate.value.split("T")[0];
   let shour = startDate.value.split("T")[1]
+  shour = shour.split(":")[0];
   let sdd = sDate.split("-");
-  sDate = sdd[2]+"."+sdd[1]+"."+sdd[0]+"%20"+shour+":00";
+  sDate = sdd[2]+"."+sdd[1]+"."+sdd[0]+"%20"+shour+":00:00";
 
   // end date parse
   let eDate = endDate.value.split("T")[0];
   let ehour = endDate.value.split("T")[1]
+  ehour = ehour.split(":")[0];
   let edd = eDate.split("-");
-  eDate = edd[2]+"."+edd[1]+"."+edd[0]+"%20"+ehour+":00";
+  eDate = edd[2]+"."+edd[1]+"."+edd[0]+"%20"+ehour.split(":")+":00:00";
 
   //crated link and request
   let stationId= stationList.value;

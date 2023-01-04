@@ -28,14 +28,14 @@ body {
 
 #map {
   height: 100%;
-  width: 60%;
+  width: 65%;
   background-color: bisque;
   border: 2px solid red;
 }
 
 #dash {
   height: 100%;
-  width: 40%;
+  width: 35%;
 }
 
 #traffic {
@@ -58,7 +58,7 @@ body {
 
 #stationList {
   margin-left: 50px;
-  width: 50%;
+  width: 75%;
   height: 30px;
   display: block;
   margin-bottom: 30px;
@@ -80,7 +80,6 @@ h3 {
 
 #start-date{
   margin-left: 10px;
-
 }
 
 #end-date{
