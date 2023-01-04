@@ -117,6 +117,8 @@ label{
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: transform;
+  margin-top: 50px;
+  margin-left: 35%;
 }
 
 .calcAqi:disabled {
