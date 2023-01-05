@@ -8,8 +8,8 @@
     <title>Air Quality Management Portal</title>
     <meta name="author" content="Muzafer Bulut" />
     <script src="js/getMap.js" defer></script>
-    <script src="js/getAqi.js" defer></script>
-    <script src="js/drawChart.js" defer></script>
+    <script src="js/getChart.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -32,22 +32,26 @@
           <h3>Station List</h3>
           <select name="select-element" id="stationList"></select>
           <h3>Datetime Input</h3>
-          <label for="start-date">Start Date</label>
-          <input
-            type="datetime-local"
-            id="start-date"
-            name="start-date"
-            max="2020-06-19 00:00:00"
-          />
-          <label for="end-date">End Date</label>
-          <input
-            type="datetime-local"
-            id="end-date"
-            name="end-date"
-            max="2020-06-19 00:00:00"
-            min="2020-06-02 00:00:00"
-          />
+          <div>
+            <label for="start-date">Start Date : </label>
+            <input
+              type="datetime-local"
+              id="start-date"
+              name="start-date"
+              max="2020-06-19 00:00:00"
+            />
+          </div>
           <br />
+          <div>
+            <label for="end-date">End Date : </label>
+            <input
+              type="datetime-local"
+              id="end-date"
+              name="end-date"
+              max="2020-06-19 00:00:00"
+              min="2020-06-02 00:00:00"
+            />
+          </div>
           <button
             id="submit-button"
             class="calcAqi"
@@ -59,9 +63,11 @@
         </div>
       </div>
       <div id="flex-bottom">
-        <div id="traffic"></div>
+        <div id="aqiData">
+          <canvas id="observationValues"></canvas>
+        </div>
         <div id="meteorology"></div>
-        <div id="weather"></div>
+        <div id="traffic"></div>
       </div>
     </div>
   </body>

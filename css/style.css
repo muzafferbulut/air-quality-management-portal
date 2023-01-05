@@ -28,14 +28,14 @@ body {
 
 #map {
   height: 100%;
-  width: 65%;
+  width: 66.6%;
   background-color: bisque;
   border: 2px solid red;
 }
 
 #dash {
   height: 100%;
-  width: 35%;
+  width: 33.3%;
 }
 
 #traffic {
@@ -50,10 +50,9 @@ body {
   background-color: rgb(145, 136, 136);
 }
 
-#weather {
+#aqiData {
   height: 100%;
   width: 33.33%;
-  background-color: rgb(214, 25, 173);
 }
 
 #stationList {

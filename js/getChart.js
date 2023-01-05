@@ -13,25 +13,40 @@ startDate.addEventListener("change", () => {
 document.getElementById("submit-button").addEventListener("click", () => {
   // start date parse
   let sDate = startDate.value.split("T")[0];
-  let shour = startDate.value.split("T")[1]
+  let shour = startDate.value.split("T")[1];
   shour = shour.split(":")[0];
   let sdd = sDate.split("-");
-  sDate = sdd[2]+"."+sdd[1]+"."+sdd[0]+"%20"+shour+":00:00";
+  sDate = sdd[2] + "." + sdd[1] + "." + sdd[0] + "%20" + shour + ":00:00";
 
   // end date parse
   let eDate = endDate.value.split("T")[0];
-  let ehour = endDate.value.split("T")[1]
+  let ehour = endDate.value.split("T")[1];
   ehour = ehour.split(":")[0];
   let edd = eDate.split("-");
-  eDate = edd[2]+"."+edd[1]+"."+edd[0]+"%20"+ehour.split(":")+":00:00";
+  eDate =
+    edd[2] + "." + edd[1] + "." + edd[0] + "%20" + ehour.split(":") + ":00:00";
 
   //crated link and request
-  let stationId= stationList.value;
+  let stationId = stationList.value;
   let link = `https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId=${stationId}&StartDate=${sDate}&EndDate=${eDate}`;
 
-  fetch(link).then(
-    response => response.json()
-  ).then(data => {
-    console.log(data);
-  })
+
+  // istek atılır ve grafikler çizilir.
+  fetch(link)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let pm10Aqi;
+      let so2Aqi;
+      let o3Aqi;
+      let no2Aqi;
+      let coAqi;
+
+      // seçilen tarih aralığı için dönen verinin ortalama aqi değerleri bar grafik
+
+      // seçilen tarih aralığı için dönen verilerin etkin kirleticileri oranı için donut grafik
+
+      // seçilen tarih aralığı için dönen verilerin aqi değişimi line grafik
+
+    });
 });
