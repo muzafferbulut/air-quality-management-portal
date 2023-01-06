@@ -11,6 +11,13 @@ startDate.addEventListener("change", () => {
 });
 
 document.getElementById("submit-button").addEventListener("click", () => {
+  let pm10Aqi = [];
+  let so2Aqi = [];
+  let o3Aqi = [];
+  let no2Aqi = [];
+  let coAqi = [];
+  let aqiIndex = [];
+
   // start date parse
   let sDate = startDate.value.split("T")[0];
   let shour = startDate.value.split("T")[1];
@@ -30,23 +37,27 @@ document.getElementById("submit-button").addEventListener("click", () => {
   let stationId = stationList.value;
   let link = `https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId=${stationId}&StartDate=${sDate}&EndDate=${eDate}`;
 
-
   // istek atılır ve grafikler çizilir.
   fetch(link)
     .then((response) => response.json())
     .then((data) => {
+      
       console.log(data);
-      let pm10Aqi;
-      let so2Aqi;
-      let o3Aqi;
-      let no2Aqi;
-      let coAqi;
+
+      data.forEach((element) => {
+        pm10Aqi.push(element["Concentration"]["PM10"]);
+        so2Aqi.push(element["Concentration"]["SO2"]);
+        coAqi.push(element["Concentration"]["CO"]);
+        o3Aqi.push(element["Concentration"]["O3"]);
+        pm10Aqi.push(element["Concentration"]["PM10"]);
+        no2Aqi.push(element["Concentration"]["NO2"]);
+        aqiIndex.push(element["AQI"]["AQIIndex"]);
+      });
 
       // seçilen tarih aralığı için dönen verinin ortalama aqi değerleri bar grafik
 
       // seçilen tarih aralığı için dönen verilerin etkin kirleticileri oranı için donut grafik
 
       // seçilen tarih aralığı için dönen verilerin aqi değişimi line grafik
-
     });
 });
