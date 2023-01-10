@@ -1,7 +1,8 @@
 ﻿let startDate = document.getElementById("start-date");
 let endDate = document.getElementById("end-date");
 let stationList = document.getElementById("stationList");
-let link;
+let link =
+  "https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId=6b7a9840-1e13-4045-a79d-0f881c4852ad&StartDate=18.06.2020%2000:00:00&EndDate=19.06.2020%2000:00:00";
 let bChart;
 let lChart;
 let dChart;
@@ -39,7 +40,7 @@ function createLink() {
   //crated link and request
   let stationId = stationList.value;
   let link = `https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId=${stationId}&StartDate=${sDate}&EndDate=${eDate}`;
-
+  console.log(link);
   return link;
 }
 
@@ -199,7 +200,9 @@ function getCharts() {
               borderWidth: 1,
             },
           ],
-        }
+        },
       });
     });
 }
+
+getCharts();
