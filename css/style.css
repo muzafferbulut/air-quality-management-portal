@@ -40,13 +40,11 @@ body {
 #doughnut-chart {
   height: 100%;
   width: 33.33%;
-  background-color: red;
 }
 
 #line-chart {
   height: 100%;
   width: 33.33%;
-  background-color: rgb(145, 136, 136);
 }
 
 #bar-chart {

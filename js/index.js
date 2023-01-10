@@ -64,17 +64,32 @@ stationList.addEventListener("change", () => {
 });
 
 function getCharts() {
-
-  if(bChart){
+  if (bChart) {
     bChart.destroy();
   }
 
+  if (lChart) {
+    lChart.destroy();
+  }
+
+  if (dChart) {
+    dChart.destroy();
+  }
+
   let pm10Aqi = [];
-  let so2Aqi= [];
-  let o3Aqi = []; 
+  let so2Aqi = [];
+  let o3Aqi = [];
   let no2Aqi = [];
   let coAqi = [];
   let aqiIndex = [];
+  let readTime = [];
+
+  // degiskenler
+  let countPM10 = 0;
+  let countSO2 = 0;
+  let countCO = 0;
+  let countO3 = 0;
+  let countNO2 = 0;
 
   fetch(link)
     .then((response) => response.json())
@@ -86,6 +101,21 @@ function getCharts() {
         o3Aqi.push(element["Concentration"]["O3"]);
         no2Aqi.push(element["Concentration"]["NO2"]);
         aqiIndex.push(element["AQI"]["AQIIndex"]);
+        readTime.push(element["ReadTime"]);
+
+        if (element["AQI"]["ContaminantParameter"] == "PM10") {
+          countPM10 += 1;
+        } else if (element["AQI"]["ContaminantParameter"] == "SO2") {
+          countSO2 += 1;
+        } else if (element["AQI"]["ContaminantParameter"] == "CO") {
+          countCO += 1;
+        } else if (element["AQI"]["ContaminantParameter"] == "O3") {
+          countO3 += 1;
+        } else if (element["AQI"]["ContaminantParameter"] == "NO2") {
+          countNO2 += 1;
+        } else {
+          alert("Hata!");
+        }
       });
 
       // grafik 1: bu grafik her kirletici için seçilen tarih aralığında ortalama değerleri bularak bar chart çizecek
@@ -99,23 +129,88 @@ function getCharts() {
           datasets: [
             {
               label: "Ortalama İndeks Değerleri",
-              data: [avgOfArray(pm10Aqi),avgOfArray(so2Aqi), avgOfArray(coAqi), avgOfArray(o3Aqi),avgOfArray(no2Aqi)],
-              borderWidth: 1
+              data: [
+                avgOfArray(pm10Aqi),
+                avgOfArray(so2Aqi),
+                avgOfArray(coAqi),
+                avgOfArray(o3Aqi),
+                avgOfArray(no2Aqi),
+              ],
+              borderWidth: 1,
             },
           ],
         },
         options: {
           scales: {
             y: {
-              beginAtZero: true
-            }
-          }
-        }
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      // // grafik 2 : Etkin  kirleticilerin değişiminin line grafiği
+
+      // let lineChart = document.getElementById("lineChart");
+
+      // lChart = new Chart(lineChart, {
+      //   data: {
+      //     labels: readTime,
+      //     datasets: [
+      //       {
+      //         label: "Etkin Kirletici Zaman Serisi",
+      //         data: aqiIndex,
+      //         backgroundColor: "rgba(255, 99, 132, 0.2)",
+      //         borderColor: "rgba(255, 99, 132, 1)",
+      //         borderWidth: 1,
+      //       },
+      //     ]
+      //   }
+      //   // options: {
+      //   //   scales: {
+      //   //     yAxes: [
+      //   //       {
+      //   //         beginAtZero: false,
+      //   //         autoScale: true,
+      //   //       },
+      //   //     ],
+      //   //   },
+      //   // },
+      // });
+
+      // etkin kirletcilerin birbirine oranı
+
+      let ctx = document.getElementById("doughnutChart");
+      dChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["PM10", "SO2", "O3", "NO2", "CO"],
+          datasets: [
+            {
+              label: "Etkin Kirletici Oranları",
+              data: [countPM10, countSO2, countO3, countNO2, countCO],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
       });
     });
-
-    // grafik 2 : Etkin  kirleticilerin değişiminin line grafiği
-
-    
-
 }
