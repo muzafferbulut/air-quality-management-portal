@@ -113,8 +113,6 @@ function getCharts() {
           countO3 += 1;
         } else if (element["AQI"]["ContaminantParameter"] == "NO2") {
           countNO2 += 1;
-        } else {
-          alert("Hata!");
         }
       });
 
@@ -149,35 +147,6 @@ function getCharts() {
         },
       });
 
-      // // grafik 2 : Etkin  kirleticilerin değişiminin line grafiği
-
-      // let lineChart = document.getElementById("lineChart");
-
-      // lChart = new Chart(lineChart, {
-      //   data: {
-      //     labels: readTime,
-      //     datasets: [
-      //       {
-      //         label: "Etkin Kirletici Zaman Serisi",
-      //         data: aqiIndex,
-      //         backgroundColor: "rgba(255, 99, 132, 0.2)",
-      //         borderColor: "rgba(255, 99, 132, 1)",
-      //         borderWidth: 1,
-      //       },
-      //     ]
-      //   }
-      //   // options: {
-      //   //   scales: {
-      //   //     yAxes: [
-      //   //       {
-      //   //         beginAtZero: false,
-      //   //         autoScale: true,
-      //   //       },
-      //   //     ],
-      //   //   },
-      //   // },
-      // });
-
       // etkin kirletcilerin birbirine oranı
 
       let ctx = document.getElementById("doughnutChart");
@@ -211,6 +180,26 @@ function getCharts() {
           responsive: true,
           maintainAspectRatio: false,
         },
+      });
+
+      // grafik 2 : Etkin  kirleticilerin değişiminin line grafiği
+
+      let lineChart = document.getElementById("lineChart");
+
+      lChart = new Chart(lineChart, {
+        type: "line",
+        data: {
+          labels: readTime,
+          datasets: [
+            {
+              label: "AQI Index",
+              data: aqiIndex,
+              backgroundColor: "rgba(255, 99, 132, 0.2)",
+              borderColor: "rgba(255, 99, 132, 1)",
+              borderWidth: 1,
+            },
+          ],
+        }
       });
     });
 }
