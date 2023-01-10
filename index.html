@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Air Quality Management Portal</title>
     <meta name="author" content="Muzafer Bulut" />
+
     <script src="js/getMap.js" defer></script>
-    <script src="js/getCharts.js" defer></script>
+    <script src="js/index.js" defer></script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link
       rel="stylesheet"
@@ -39,6 +41,7 @@
               id="start-date"
               name="start-date"
               max="2020-06-19 00:00:00"
+              value="2020-06-18 00:00:00"
             />
           </div>
           <br />
@@ -48,26 +51,19 @@
               type="datetime-local"
               id="end-date"
               name="end-date"
+              value="2020-06-19 00:00:00"
               max="2020-06-19 00:00:00"
-              min="2020-06-02 00:00:00"
+              min="2020-06-18 00:00:00"
             />
           </div>
-          <button
-            id="submit-button"
-            class="calcAqi"
-            role="button"
-            type="submit"
-          >
-            Calculate AQI
-          </button>
         </div>
       </div>
       <div id="flex-bottom">
-        <div id="aqiData">
-          <canvas id="observationValues"></canvas>
+        <div id="bar-chart">
+          <canvas id="barChart"></canvas>
         </div>
-        <div id="meteorology"></div>
-        <div id="traffic"></div>
+        <div id="doughnut-chart"></div>
+        <div id="line-chart"></div>
       </div>
     </div>
   </body>

@@ -30,7 +30,6 @@ body {
   height: 100%;
   width: 66.6%;
   background-color: bisque;
-  border: 2px solid red;
 }
 
 #dash {
@@ -38,19 +37,19 @@ body {
   width: 33.3%;
 }
 
-#traffic {
+#doughnut-chart {
   height: 100%;
   width: 33.33%;
   background-color: red;
 }
 
-#meteorology {
+#line-chart {
   height: 100%;
   width: 33.33%;
   background-color: rgb(145, 136, 136);
 }
 
-#aqiData {
+#bar-chart {
   height: 100%;
   width: 33.33%;
 }
@@ -63,7 +62,7 @@ body {
   margin-bottom: 30px;
 }
 
-hr{
+hr {
   width: 30%;
   margin-bottom: 20px;
 }
@@ -77,58 +76,15 @@ h3 {
   margin-left: 30px;
 }
 
-#start-date{
+#start-date {
   margin-left: 10px;
 }
 
-#end-date{
+#end-date {
   margin-left: 10px;
   margin-right: 50px;
 }
 
-label{
-  margin-left: 30px;
-}
-
-.calcAqi {
-  appearance: none;
-  background-color: #73a86c;
-  border: 2px solid #a0c49c;
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: normal;
-  margin: auto;
-  min-height: 60px;
-  min-width: 0;
-  outline: none;
-  padding: 16px 24px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  will-change: transform;
-  margin-top: 50px;
-  margin-left: 35%;
-}
-
-.calcAqi:disabled {
-  pointer-events: none;
-}
-
-.calcAqi:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
-
-.calcAqi:active {
-  box-shadow: none;
-  transform: translateY(0);
+label {
+  margin-left: 50px;
 }
