@@ -14,7 +14,7 @@ body {
 
 #flex-top {
   width: 100%;
-  height: 60%;
+  height: 55%;
   display: flex;
   position: relative;
 }
@@ -30,26 +30,41 @@ body {
   height: 100%;
   width: 66.6%;
   background-color: bisque;
+  border: 2px solid ;
+  border-color: rgb(176, 216, 203);
+  margin: 3px;
 }
 
 #dash {
   height: 100%;
   width: 33.3%;
+  border: 2px solid ;
+  border-color: rgb(176, 216, 203);
+  margin: 3px;
 }
 
 #doughnut-chart {
   height: 100%;
   width: 33.33%;
+  border: 2px solid ;
+  border-color: rgb(176, 216, 203);
+  margin: 3px;
 }
 
 #line-chart {
   height: 100%;
   width: 33.33%;
+  border: 2px solid ;
+  border-color: rgb(176, 216, 203);
+  margin: 3px;
 }
 
 #bar-chart {
   height: 100%;
   width: 33.33%;
+  border: 2px solid ;
+  border-color: rgb(176, 216, 203);
+  margin: 3px;
 }
 
 #stationList {
