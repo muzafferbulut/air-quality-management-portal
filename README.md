@@ -22,4 +22,4 @@ sistemi oluşturulacak.
 
 ### Preview
 
-<img src="/img/video.gif">
+<img src="/video.gif" width="auto">
