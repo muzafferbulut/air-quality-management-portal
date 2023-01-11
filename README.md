@@ -19,3 +19,7 @@ sistemi oluşturulacak.
 ### Veri Kaynağı
 
   * [İBB Açık Veri Portalı](https://data.ibb.gov.tr/dataset/hava-kalitesi-istasyon-olcum-sonuclari-web-servisi)
+
+### Preview
+
+<img src="/img/video.gif">
