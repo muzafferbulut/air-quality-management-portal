@@ -44,7 +44,7 @@ src/
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/muzafferbulut/air-quality-management-portal.git](https://github.com/muzafferbulut/air-quality-management-portal.git)
+git clone https://github.com/muzafferbulut/air-quality-management-portal.git
 cd air-quality-management-portal
 
 # 2. Install Dependencies
