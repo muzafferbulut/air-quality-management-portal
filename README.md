@@ -1,28 +1,67 @@
-# Air Quality Management Portal
+# 🌍 Air Quality GIS Dashboard
 
-### Amaç
+> **An interactive Web GIS platform for real-time monitoring and visualization of air quality indices (AQI).**
 
-Hava kalitesi günümüzün önemli problemlerinden biri. Önlem alınmadığı sürece ciddiyeti artan bir problem. Akıllı şehirlerin hayata geçirilmesiyle şehirlerimiz
-sensörler ile donatıldı ancak bu sensörlerin kaydettiği veriler bütünleşik olarak değerlendirilip faydalı bilgi çıkarılmadığı sürece yapılan yatırımların
-yerini bulduğunu söylemek pek doğru olmaz.
+![React](https://img.shields.io/badge/React-18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-Fast_Build-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet-Mapping-199900?style=for-the-badge&logo=leaflet&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-Visualization-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 
-Hava kalitesi yönetim portalı İBB Açık Veri Portalında yayımlanan hava kalitesi API'sini kullanan ve servisin sağladığı verilerin görselleştirilmesine olanak tanıyan
-bir portal. Tabiki ilerleyen aşamalarda trafik yoğunluğu ve meteoroloji verileri de sisteme entegre edilerek bütünleşik bir şekilde sunulacak ve bir uyarı
-sistemi oluşturulacak.
+## 📖 Overview
 
-### Kullanılan Kütüphaneler
+This project is a geospatial dashboard designed to visualize environmental data collected from various monitoring stations. It combines powerful mapping capabilities with data analytics to provide users with actionable insights regarding air quality levels (PM10, PM2.5, NO2, etc.).
 
-- Leaflet
-- Chart.js
+Unlike static maps, this application features a **dynamic interface** where users can interact with stations to view detailed historical data and real-time metrics through integrated charts.
 
-### Veri Kaynağı
+---
 
-- [İBB Açık Veri Portalı](https://data.ibb.gov.tr/dataset/hava-kalitesi-istasyon-olcum-sonuclari-web-servisi)
+## ✨ Key Features
 
-### Preview
+* **🗺️ Interactive Map Interface:** Built with **Leaflet**, allowing users to explore monitoring stations geographically.
+* **📊 Data Visualization:** Integrated **Chart.js** (Bar, Line, Doughnut) to visualize pollutant trends over time.
+* **⚡ High Performance:** Powered by **Vite** for lightning-fast bundling and HMR (Hot Module Replacement).
+* **🪝 Custom Hooks Architecture:** Data fetching and logic are abstracted into reusable hooks (`useAirQualityData`, `useStationMetrics`) for cleaner components.
 
-<img src="/video.gif" width="auto">
+---
 
-React kullanılarak refactor edilmiştir.
+## 📂 Project Structure
+
+The project follows a modular component-based architecture:
+
+```bash
+src/
+├── components/
+│   ├── charts/             # Reusable Chart Components (Bar, Line, Doughnut) 📊
+│   ├── AirQualityMap.jsx   # Core Mapping Component (Leaflet Integration) 🌍
+│   └── Header.jsx          # UI Layout
+├── hooks/
+│   ├── useAirQualityData.jsx  # API Integration & State Management ⚡
+│   └── useStationMetrics.jsx  # Data Processing Logic
+└── App.jsx                 # Main Application Layout
+```
+
+## Installation & Run
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/muzafferbulut/air-quality-management-portal.git](https://github.com/muzafferbulut/air-quality-management-portal.git)
+cd air-quality-management-portal
+
+# 2. Install Dependencies
+npm install
+
+# 3. Start Development Server
+npm run dev
+# The app will be available at http://localhost:5173/ (usually)
+```
 
 <img src="/refactor.png" width="auto">
+
+## 🛠️ Tech Stack details
+
+  * Frontend Library: React 18
+  * Build Tool: Vite
+  * Mapping Engine: React Leaflet / Leaflet
+  * Charting: Chart.js / React-Chartjs-2
+  * HTTP Client: Axios (implied)
+
